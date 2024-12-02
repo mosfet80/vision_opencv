@@ -260,7 +260,7 @@ static void fill_sensor_msgs_image_from_cvmat(
   }
 
   image.step = static_cast<sensor_msgs::msg::Image::_step_type>(cv_mat.step);
-  size_t size = cv_mat.step * cv_mat.rows;
+  const size_t size = cv_mat.step * cv_mat.rows;
   image.data.resize(size);
   memcpy(&image.data[0], cv_mat.data, size);
   image.header = header;
